@@ -1,0 +1,122 @@
+{
+  "position": "top",
+  "layer": "top",
+  "output": "eDP-1",
+  "height": 35,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": ["niri/workspaces", "niri/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "network",
+    "bluetooth",
+    "memory",
+    "cpu",
+    "battery",
+    "pulseaudio",
+    "backlight",
+    "niri/language",
+  ],
+  // Modules configuration
+  "bluetooth": {
+    "format-disable": "|!| ",
+    "format-on": "|| ",
+    "format-connected": "|| ",
+    "format-off": "|!| ",
+    "on-click": "blueman-manager",
+    "on-click-right": "bluetoothctl power off",
+    "on-click-middle": "bluetoothctl power on",
+    "tooltip-format-on": "",
+    "tooltip-format-off": "",
+    "tooltip-format-disabled": "",
+    "tooltip-format": "{device_alias} 🔋{device_battery_percentage}%",
+  },
+  "network": {
+    "interface": "wlan0",
+    "format": "|{ifname}| ",
+    "format-wifi": "|{essid}  | ",
+    "on-click": "alacritty -e iwctl",
+    "format-ethernet": "|{ipaddr}/{cidr} 󰊗 | ",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "|{ifname} via {gwaddr} 󰊗 | ",
+    "tooltip-format-wifi": "{essid}({signalStrength}%)",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+  },
+  "tray": {
+    "icon-size": 24,
+    "tooltip": false,
+    "spacing": 10,
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "|<span foreground='#B8BB26'> </span>{used}GB|",
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "|<span foreground='#FB4934'> </span>{usage}%|",
+    "max-length": 10,
+    "min-length": 8,
+  },
+
+  "niri/language": {
+    "format": "{}",
+    "format-en": "|󰰎 us|",
+    "format-ru": "|󰰍 ru|",
+  },
+
+  "clock": {
+    "format": "|<span foreground='#8EC07C'></span> {:%H:%M  <span foreground='#8EC07C'></span> %e %b}|",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "today-format": "<b>{}</b>",
+  },
+
+  "niri/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "disable-scroll": false,
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down",
+    "format": "|{icon}|",
+    "on-click": "activate",
+    "format-icons": {
+      "sort-by-number": true,
+    },
+  },
+
+  "niri/windows": {
+    "format": "{}",
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 10,
+    },
+    "format": "|{icon} {capacity}%|",
+    "format-charging": "| {capacity}%|",
+    "format-plugged": "| {capacity}%|",
+    "format-icons": ["", "", "", "", ""],
+  },
+
+  "backlight": {
+    "format": "|{icon}{percent}%|",
+    "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "],
+  },
+
+  "pulseaudio": {
+    "format": "|{icon} {volume}%|",
+    "format-muted": "󰝟 ",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+  },
+}
