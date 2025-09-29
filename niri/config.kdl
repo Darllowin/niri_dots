@@ -60,8 +60,7 @@ spawn-at-startup "/home/darllowin/.config/niri/battery.sh"
 spawn-at-startup "swaybg" "-i" "/home/darllowin/Pictures/Wallpapers/this-wallpaper-is-not-available.png"
 spawn-at-startup "hypridle"
 spawn-at-startup "waybar"
-//spawn-at-startup "wl-clipboard-history -t"
-//spawn-at-startup "wl-paste --watch cliphist store"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 
 environment {
@@ -137,8 +136,8 @@ binds {
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "google-chrome-stable"; }
-    Super+Shift+W hotkey-overlay-title="Restart waybar" { spawn "/home/darllowin/.config/waybar/waybar.sh"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Shift+W hotkey-overlay-title="Restart waybar" { spawn "/home/darllowin/.config/waybar/waybar.sh"; }
+    Mod+Shift+C { spawn "~/.local/bin/clipboard.sh"; } // cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
