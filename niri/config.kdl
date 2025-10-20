@@ -16,6 +16,14 @@ output "eDP-1" {
     scale 1
     variable-refresh-rate
 }
+
+workspace "browser"
+workspace "terminal"
+workspace "files"
+workspace "ide"
+workspace "chat"
+workspace "game"
+
 layout {
     gaps 0
     center-focused-column "never"
@@ -57,7 +65,8 @@ prefer-no-csd
 
 
 spawn-at-startup "/home/darllowin/.config/niri/battery.sh"
-spawn-at-startup "swaybg" "-i" "/home/darllowin/Pictures/Wallpapers/this-wallpaper-is-not-available.png"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "swww" "img" "/home/darllowin/Pictures/Wallpapers/this-wallpaper-is-not-available.png"
 spawn-at-startup "hypridle"
 spawn-at-startup "waybar"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
@@ -87,6 +96,7 @@ window-rule {
     match app-id="blueman-manager"
     match app-id="mpv"
     match app-id="swayimg"
+    match app-id="lightningview"
 
     default-column-width { fixed 1000; }
     default-window-height { fixed 600; }
@@ -122,7 +132,35 @@ window-rule {
 window-rule {
     match app-id="firefox"
     match app-id="google-chrome-stable"
+    open-on-workspace "browser"
     open-maximized true
+}
+
+window-rule {
+    match app-id="Alacritty"
+    open-on-workspace "terminal"
+}
+
+window-rule {
+    match app-id="org.gnome.Nautilus"
+    open-on-workspace "files"
+}
+
+window-rule {
+    match app-id="dev.zed.Zed"
+    open-on-workspace "ide"
+}
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    match app-id="discord"
+    open-on-workspace "chat"
+}
+
+window-rule {
+    match app-id="steam"
+    match app-id="PortProton"
+    open-on-workspace "game"
 }
 
 window-rule {
@@ -135,9 +173,9 @@ binds {
 
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "google-chrome-stable"; }
+    Mod+Shift+C { spawn "~/.local/bin/clipboard.sh"; }
+    Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox-bin"; }
     Mod+Shift+W hotkey-overlay-title="Restart waybar" { spawn "/home/darllowin/.config/waybar/waybar.sh"; }
-    Mod+Shift+C { spawn "~/.local/bin/clipboard.sh"; } // cliphist list | fuzzel --dmenu | cliphist decode | wl-copy
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -172,15 +210,6 @@ binds {
     Mod+End  { focus-column-last; }
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
-
-    Mod+Shift+Left  { focus-monitor-left; }
-    Mod+Shift+Down  { focus-monitor-down; }
-    Mod+Shift+Up    { focus-monitor-up; }
-    Mod+Shift+Right { focus-monitor-right; }
-    Mod+Shift+H     { focus-monitor-left; }
-    Mod+Shift+J     { focus-monitor-down; }
-    Mod+Shift+K     { focus-monitor-up; }
-    Mod+Shift+L     { focus-monitor-right; }
 
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
@@ -253,8 +282,6 @@ binds {
 
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    // Mod+C { center-column; }
-
     Mod+Ctrl+C { center-visible-columns; }
 
     Mod+Minus { set-column-width "-10%"; }
@@ -275,8 +302,5 @@ binds {
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
-
-    Mod+Shift+P { power-off-monitors; }
 }

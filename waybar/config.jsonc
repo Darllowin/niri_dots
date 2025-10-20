@@ -12,7 +12,6 @@
   "modules-right": [
     "tray",
     "network",
-    "bluetooth",
     "memory",
     "cpu",
     "battery",
@@ -77,16 +76,20 @@
   },
 
   "niri/workspaces": {
-    "active-only": false,
     "all-outputs": true,
     "disable-scroll": false,
     "on-scroll-up": "niri msg action focus-workspace-up",
     "on-scroll-down": "niri msg action focus-workspace-down",
-    "format": "|{icon}|",
-    "on-click": "activate",
+    "format": "| {icon} |",
     "format-icons": {
-      "sort-by-number": true,
+      "browser": "",
+      "terminal": " ",
+      "files": "🗃",
+      "ide": " ",
+      "chat": "",
+      "game": " ",
     },
+    "on-click": "activate",
   },
 
   "niri/windows": {
