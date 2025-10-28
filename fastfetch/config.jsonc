@@ -19,6 +19,11 @@
       "keyColor": "green",
     },
     {
+      "type": "disk",
+      "key": "├─󰋊",
+      "keyColor": "green",
+    },
+    {
       "type": "memory",
       "key": "╰─󰑭",
       "keyColor": "green",
@@ -75,14 +80,27 @@
       "keyColor": "blue",
     },
     {
+      "type": "InitSystem",
+      "key": "├─󰓝",
+      "keyColor": "blue",
+    },
+    {
       "type": "packages",
       "key": "├─󰏖",
       "keyColor": "blue",
     },
     {
       "type": "uptime",
-      "key": "╰─󰅐",
+      "key": "├─󰅐",
       "keyColor": "blue",
+    },
+
+    {
+      "type": "command",
+      "key": "╰─󱦟",
+      "keyColor": "blue",
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days old",
+      "format": "this system is {1}",
     },
 
     "break",

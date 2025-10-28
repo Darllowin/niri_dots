@@ -17,13 +17,6 @@ output "eDP-1" {
     variable-refresh-rate
 }
 
-workspace "browser"
-workspace "terminal"
-workspace "files"
-workspace "ide"
-workspace "chat"
-workspace "game"
-
 layout {
     gaps 0
     center-focused-column "never"
@@ -132,35 +125,7 @@ window-rule {
 window-rule {
     match app-id="firefox"
     match app-id="google-chrome-stable"
-    open-on-workspace "browser"
     open-maximized true
-}
-
-window-rule {
-    match app-id="Alacritty"
-    open-on-workspace "terminal"
-}
-
-window-rule {
-    match app-id="org.gnome.Nautilus"
-    open-on-workspace "files"
-}
-
-window-rule {
-    match app-id="dev.zed.Zed"
-    open-on-workspace "ide"
-}
-
-window-rule {
-    match app-id="org.telegram.desktop"
-    match app-id="discord"
-    open-on-workspace "chat"
-}
-
-window-rule {
-    match app-id="steam"
-    match app-id="PortProton"
-    open-on-workspace "game"
 }
 
 window-rule {
