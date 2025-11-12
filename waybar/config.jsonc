@@ -53,6 +53,7 @@
 
   "memory": {
     "interval": 30,
+    "on-click": "alacritty -e btop",
     "format": "|<span foreground='#B8BB26'> </span>{used}GB|",
   },
 
@@ -81,14 +82,14 @@
     "on-scroll-up": "niri msg action focus-workspace-up",
     "on-scroll-down": "niri msg action focus-workspace-down",
     "format": "| {icon} |",
-    "format-icons": {
+    /*"format-icons": {
       "browser": "",
       "terminal": " ",
       "files": "🗃",
       "ide": " ",
       "chat": "",
       "game": " ",
-    },
+    },*/
     "on-click": "activate",
   },
 
@@ -98,8 +99,8 @@
 
   "battery": {
     "states": {
-      "good": 95,
-      "warning": 30,
+      "good": 90,
+      "warning": 20,
       "critical": 10,
     },
     "format": "|{icon} {capacity}%|",
