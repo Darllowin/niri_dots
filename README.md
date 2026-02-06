@@ -12,7 +12,7 @@
     *   **btop** 
     *   **fastfetch**
     *   **fuzzel** 
-    *   **mako*
+    *   **mako**
     *   **waybar** 
     *   **yazi** 
     *   **swayidle** & **swaylock** 
