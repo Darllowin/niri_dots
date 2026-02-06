@@ -1,21 +1,16 @@
 font=JetBrainsMonoNerdFont-Regular 18
-text-color=#ebdbb2
-# Слой поверх других окон
+text-color=#3c3836
 layer=overlay
 
-# Размеры уведомлений
 width=400
 max-icon-size=34
 margin=15
 
-# Цвета
-background-color=#181818
-progress-color=#303030
-border-color=#303030
+background-color=#fbf1c7
+progress-color=#ebdbb2
+border-color=#928374
 
-# Оформление
 border-size=1
 
-# Время показа уведомлений
 default-timeout=5000
 ignore-timeout=1

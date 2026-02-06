@@ -1,0 +1,22 @@
+theme = "gruvbox_light"
+
+[editor]
+mouse = true
+bufferline = "always"
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator"]
+center = ["diagnostics"]
+right = ["position", "file-encoding", "file-line-ending"]
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true

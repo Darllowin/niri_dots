@@ -1,0 +1,38 @@
+# --- general ---
+ignore-empty-password
+show-failed-attempts
+
+# --- fonts ---
+font=JetBrainsMono Nerd Font Mono
+font-size=20
+
+# --- colors (Gruvbox) ---
+color=1d2021
+indicator-radius=100
+indicator-thickness=15
+
+#  inner circle
+inside-color=282828
+inside-clear-color=282828
+inside-ver-color=282828
+inside-wrong-color=282828
+
+# ring (Border)
+ring-color=83a598
+ring-clear-color=d79921
+ring-ver-color=d79921
+ring-wrong-color=cc241d
+
+# backlight
+key-hl-color=b8bb26
+bs-hl-color=cc241d
+
+# text
+text-color=ebdbb2
+text-clear-color=ebdbb2
+text-ver-color=ebdbb2
+text-wrong-color=ebdbb2
+
+# lines and dividers
+line-uses-inside
+separator-color=00000000

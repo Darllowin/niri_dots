@@ -7,11 +7,12 @@
   "margin-bottom": 0,
   "margin-left": 0,
   "margin-right": 0,
-  "modules-left": ["niri/workspaces", "niri/window"],
+  "modules-left": ["cffi/niri-workspaces-enhanced", "niri/window"],
   "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "network",
+    "bluetooth",
     "memory",
     "cpu",
     "battery",
@@ -25,7 +26,6 @@
     "format-on": "|| ",
     "format-connected": "|| ",
     "format-off": "|!| ",
-    "on-click": "blueman-manager",
     "on-click-right": "bluetoothctl power off",
     "on-click-middle": "bluetoothctl power on",
     "tooltip-format-on": "",
@@ -35,9 +35,9 @@
   },
   "network": {
     "interface": "wlan0",
-    "format": "|{ifname}| ",
-    "format-wifi": "|{essid}  | ",
-    "on-click": "alacritty -e iwctl",
+    "format": "| | ",
+    "format-wifi": "| | ",
+    "on-click": "foot -e sh -c 'iwctl station wlan0 get-networks; iwctl'",
     "format-ethernet": "|{ipaddr}/{cidr} 󰊗 | ",
     "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "|{ifname} via {gwaddr} 󰊗 | ",
@@ -53,12 +53,13 @@
 
   "memory": {
     "interval": 30,
-    "on-click": "alacritty -e btop",
+    "on-click": "foot -e btop",
     "format": "|<span foreground='#B8BB26'> </span>{used}GB|",
   },
 
   "cpu": {
     "interval": 1,
+    "on-click": "foot -e btop",
     "format": "|<span foreground='#FB4934'> </span>{usage}%|",
     "max-length": 10,
     "min-length": 8,
@@ -76,20 +77,36 @@
     "today-format": "<b>{}</b>",
   },
 
+  "cffi/niri-workspaces-enhanced": {
+    "module_path": "/home/darllowin/.config/waybar/niri-workspaces-enhanced.so",
+    "format": "| {index-and-name}{separator}{window-icons} |",
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down",
+    "window-icon-format": {
+      "default": "{icon}",
+      "urgent": "{icon}",
+      "focused": "{icon}",
+    },
+    "window-icons": {
+      "com.vysp3r.ProtonPlus": "󰡶",
+      "com.saivert.pwvucontrol": "",
+      "mpv": "",
+      "vesktop": "",
+      "io.github.kukuruzka165.materialgram": "",
+      "dev.zed.Zed": "󰨞",
+      "foot": "",
+      "google-chrome": "",
+      "steam": "",
+    },
+    "window-icon-default": "*",
+  },
+
   "niri/workspaces": {
     "all-outputs": true,
     "disable-scroll": false,
     "on-scroll-up": "niri msg action focus-workspace-up",
     "on-scroll-down": "niri msg action focus-workspace-down",
     "format": "| {icon} |",
-    /*"format-icons": {
-      "browser": "",
-      "terminal": " ",
-      "files": "🗃",
-      "ide": " ",
-      "chat": "",
-      "game": " ",
-    },*/
     "on-click": "activate",
   },
 
@@ -121,6 +138,6 @@
       "default": ["󰕿", "󰖀", "󰕾"],
     },
     "scroll-step": 5,
-    "on-click": "pavucontrol",
+    "on-click": "pwvucontrol",
   },
 }

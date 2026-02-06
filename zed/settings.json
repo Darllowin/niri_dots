@@ -1,0 +1,44 @@
+{
+  "auto_update": false,
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": false,
+    },
+  },
+  "window_decorations": "client",
+  "use_system_window_tabs": false,
+  "tabs": {
+    "file_icons": true,
+    "git_status": false,
+  },
+  "title_bar": {
+    "show_menus": false,
+  },
+  "vim": {
+    "use_smartcase_find": false,
+  },
+  "toolbar": {
+    "selections_menu": true,
+    "agent_review": false,
+    "code_actions": true,
+  },
+  "which_key": {
+    "enabled": false,
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "ui_font_size": 22,
+  "buffer_font_size": 23,
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark",
+  },
+}

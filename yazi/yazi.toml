@@ -1,2 +1,52 @@
 [mgr]
 show_hidden = true
+show_symlink = true
+sort_dir_first = true
+linemode = "size"
+scrolloff = 5
+ratio = [2, 3, 4]
+
+[preview]
+max_width  = 1200
+max_height = 900
+image_quality = 75
+image_filter = "lanczos3"
+tab_size = 2
+
+[opener]
+edit = [
+    { run = 'hx "$@"', block = true, desc = "Helix" }
+]
+zed = [
+    { run = 'zed --wait "$@"', detach = true, desc = "Zed" }
+]
+
+play = [
+    { run = 'mpv "$@"', orphan = true, desc = "MPV" }
+]
+
+view = [
+    { run = 'imv "$@"', detach = true, desc = "imv" }
+]
+
+extract = [
+    { run = 'ya pub extract --list "$@"', desc = "Extract here" }
+]
+
+[open]
+rules = [
+    { mime = "text/*", use = [ "edit", "zed" ] },
+    { mime = "application/{zip,rar,7z*,tar*,gzip,xz}", use = "extract" },
+    { mime = "{audio,video}/*", use = [ "play" ] },
+    { mime = "image/*", use = "view" },
+]
+
+[[plugin.prepend_fetchers]]
+id  = "git"
+url = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id  = "git"
+url = "*/"
+run = "git"
