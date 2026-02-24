@@ -4,6 +4,8 @@ theme = "gruvbox_light"
 mouse = true
 bufferline = "always"
 true-color = true
+cursorline = true
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -11,7 +13,7 @@ normal = "block"
 select = "underline"
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name", "read-only-indicator"]
+left = ["mode", "spinner", "file-name", "file-modification-indicator", "read-only-indicator"]
 center = ["diagnostics"]
 right = ["position", "file-encoding", "file-line-ending"]
 

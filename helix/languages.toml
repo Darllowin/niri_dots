@@ -1,0 +1,16 @@
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
+
+language-servers = [ "gopls", "golangci-lint-lsp" ]
+
+[language-server.gopls]
+command = "gopls"
+
+[language-server.gopls.config]
+analyses = { unusedparams = true, shadow = true }
+staticcheck = true
+gofumpt = true
+usePlaceholders = true
+completeUnimported = true

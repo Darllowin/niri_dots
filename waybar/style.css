@@ -46,7 +46,7 @@
     color: #d3869b;
 }
 
-#pulseaudio,
+#wireplumber,
 #backlight,
 #language {
     padding: 5px;
@@ -87,7 +87,7 @@
     color: #f73019;
 }
 
-#pulseaudio {
+#wireplumber {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-left: 8px;
@@ -98,7 +98,7 @@
     color: #fabd2f;
 }
 
-#pulseaudio.muted {
+#wireplumber.muted {
     color: #928374;
 }
 

@@ -16,7 +16,7 @@
     "memory",
     "cpu",
     "battery",
-    "pulseaudio",
+    "wireplumber",
     "backlight",
     "niri/language",
   ],
@@ -39,7 +39,7 @@
     "format-wifi": "| | ",
     "on-click": "foot -e sh -c 'iwctl station wlan0 get-networks; iwctl'",
     "format-ethernet": "|{ipaddr}/{cidr} 󰊗 | ",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-disconnected": "", 
     "tooltip-format": "|{ifname} via {gwaddr} 󰊗 | ",
     "tooltip-format-wifi": "{essid}({signalStrength}%)",
     "tooltip-format-disconnected": "Disconnected",
@@ -101,16 +101,7 @@
     "window-icon-default": "*",
   },
 
-  "niri/workspaces": {
-    "all-outputs": true,
-    "disable-scroll": false,
-    "on-scroll-up": "niri msg action focus-workspace-up",
-    "on-scroll-down": "niri msg action focus-workspace-down",
-    "format": "| {icon} |",
-    "on-click": "activate",
-  },
-
-  "niri/windows": {
+    "niri/windows": {
     "format": "{}",
   },
 
@@ -131,13 +122,13 @@
     "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "],
   },
 
-  "pulseaudio": {
+  "wireplumber": {
     "format": "|{icon} {volume}%|",
-    "format-muted": "󰝟 ",
+    "format-muted": " 󰝟 ",
     "format-icons": {
       "default": ["󰕿", "󰖀", "󰕾"],
     },
     "scroll-step": 5,
-    "on-click": "pwvucontrol",
+    "on-click": "foot -e ncpamixer"
   },
 }

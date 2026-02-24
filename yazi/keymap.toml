@@ -1,3 +1,27 @@
 [[mgr.prepend_keymap]]
 on  = "m"
 run = "plugin mount"
+
+[[mgr.prepend_keymap]]
+on  = "y"
+run = [ 'shell -- for path in %s; do echo "file://$path"; done | wl-copy -t text/uri-list', "yank" ]
+
+[[mgr.prepend_keymap]]
+on  = [ "M", "m" ]
+run = "plugin gvfs -- select-then-mount --jump"
+desc = "Mount GVFS and jump"
+
+[[mgr.prepend_keymap]]
+on  = [ "M", "u" ]
+run = "plugin gvfs -- select-then-unmount --eject"
+desc = "Unmount GVFS"
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "m" ]
+run = "plugin gvfs -- jump-to-device"
+desc = "Jump to GVFS mount"
+
+[[mgr.prepend_keymap]]
+on  = [ "`", "`" ]
+run = "plugin gvfs -- jump-back-prev-cwd"
+desc = "Jump back"

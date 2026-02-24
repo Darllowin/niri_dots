@@ -62,14 +62,18 @@ cursor {
     xcursor-size 24
 }
 
-spawn-at-startup "/home/darllowin/.config/niri/scripts/battery.sh"
+spawn-at-startup "pass-secret-service"
+spawn-at-startup "gentoo-pipewire-launcher"
+spawn-at-startup "waybar"
+spawn-at-startup "~/.config/niri/scripts/idle.sh"
+spawn-at-startup "~/.config/niri/scripts/battery.sh"
 spawn-at-startup "awww-daemon"
-spawn-at-startup "awww" "img" "/home/darllowin/Pictures/Wallpapers/Tranquility.png"
-spawn-at-startup "gsettings set org.gnome.desktop.interface text-scaling-factor 1.35"
-spawn-at-startup "gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox-Plus-Light'"
-spawn-at-startup "gsettings set org.gnome.desktop.interface cursor-theme 'Simp1e-Gruvbox-Light'"
-spawn-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-BL-LB-Light'"
-spawn-at-startup "gsettings set org.gnome.desktop.interface cursor-size 24"
+spawn-at-startup "awww" "img" "~/Pictures/Wallpapers/Tranquility.png"
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "text-scaling-factor" "1.35"
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "icon-theme" "Gruvbox-Plus-Light"
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "cursor-theme" "Simp1e-Gruvbox-Light"
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "gtk-theme" "Gruvbox-BL-LB-Light"
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "cursor-size" "24"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 
