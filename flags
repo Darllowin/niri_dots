@@ -1,0 +1,55 @@
+# =========================
+# SYSTEMD / BOOT
+# =========================
+sys-apps/systemd kernel-install boot ukify
+sys-kernel/installkernel dracut systemd-boot uki ukify
+
+# =========================
+# LLVM / TOOLCHAIN
+# =========================
+sys-devel/clang-common default-compiler-rt default-lld llvm-libunwind
+llvm-core/clang-common default-compiler-rt default-lld llvm-libunwind
+llvm-runtimes/clang-runtime default-compiler-rt default-lld llvm-libunwind
+llvm-core/clang-linker-config default-lld
+llvm-runtimes/clang-rtlib-config default-compiler-rt
+llvm-runtimes/clang-unwindlib-config llvm-libunwind default-compiler-rt
+llvm-runtimes/libunwind static-libs
+
+# =========================
+# KERNEL
+# =========================
+sys-kernel/cachyos-kernel-bin -eevdf bore
+
+# =========================
+# GRAPHICS
+# =========================
+media-libs/libglvnd X
+media-libs/libepoxy X
+media-libs/mesa X
+
+# =========================
+# AUDIO / VIDEO
+# =========================
+media-video/pipewire extra sound-server pipewire-alsa
+media-video/ffmpeg opus svt-av1 shaderc x264 x265 drm dav1d vpx openssl zimg libsoxr
+
+media-fonts/noto-emoji icons
+media-video/mpv -alsa -lcms -xv zimg rubberband
+sys-devel/binutils -pgo
+sys-devel/gcc -pgo -lto -fortran graphite
+net-dns/dnsmasq script
+net-libs/gnutls tools pkcs11
+x11-libs/libdrm video_cards_radeon
+dev-lang/rust-bin clippy rust-analyzer rust-src rustfmt
+gui-apps/waybar niri network tray upower
+dev-libs/libdbusmenu gtk3
+app-admin/doas persist
+net-wireless/iwd standalone
+media-libs/freetype harfbuzz
+media-libs/libsdl2 gles2
+media-gfx/imv webp jpegxl
+app-text/xmlto text
+app-crypt/gcr gtk
+media-libs/libpng apng
+media-libs/libvpx postproc
+www-client/firefox hwaccel system-pipewire system-png wasm-sandbox
