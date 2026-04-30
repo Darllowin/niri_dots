@@ -1,4 +1,7 @@
 {
+  "disable_ai": true,
+  "proxy": "",
+  "icon_theme": "Colored Zed Icons Theme Light",
   "auto_update": false,
   "terminal": {
     "toolbar": {
@@ -25,8 +28,8 @@
   "which_key": {
     "enabled": false,
   },
-  "ui_font_family": "JetBrainsMono Nerd Font Mono",
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_family": "IosevkaTerm Nerd Font Mono",
+  "buffer_font_family": "IosevkaTerm Nerd Font",
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
@@ -34,8 +37,8 @@
   "session": {
     "trust_all_worktrees": true,
   },
-  "ui_font_size": 22,
-  "buffer_font_size": 23,
+  "ui_font_size": 26,
+  "buffer_font_size": 27,
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light",

@@ -26,6 +26,7 @@
     "format-on": "|| ",
     "format-connected": "|| ",
     "format-off": "|!| ",
+    "on-click": "foot -e bluetuith",
     "on-click-right": "bluetoothctl power off",
     "on-click-middle": "bluetoothctl power on",
     "tooltip-format-on": "",
@@ -39,7 +40,7 @@
     "format-wifi": "| | ",
     "on-click": "foot -e sh -c 'iwctl station wlan0 get-networks; iwctl'",
     "format-ethernet": "|{ipaddr}/{cidr} 󰊗 | ",
-    "format-disconnected": "", 
+    "format-disconnected": "",
     "tooltip-format": "|{ifname} via {gwaddr} 󰊗 | ",
     "tooltip-format-wifi": "{essid}({signalStrength}%)",
     "tooltip-format-disconnected": "Disconnected",
@@ -88,20 +89,19 @@
       "focused": "{icon}",
     },
     "window-icons": {
-      "com.vysp3r.ProtonPlus": "󰡶",
-      "com.saivert.pwvucontrol": "",
+      "Bitwarden": "󰢬",
       "mpv": "",
       "vesktop": "",
       "io.github.kukuruzka165.materialgram": "",
       "dev.zed.Zed": "󰨞",
       "foot": "",
-      "google-chrome": "",
+      "org.chromium.Chromium": "",
       "steam": "",
     },
     "window-icon-default": "*",
   },
 
-    "niri/windows": {
+  "niri/windows": {
     "format": "{}",
   },
 
@@ -129,6 +129,6 @@
       "default": ["󰕿", "󰖀", "󰕾"],
     },
     "scroll-step": 5,
-    "on-click": "foot -e ncpamixer"
+    "on-click": "foot -e wiremix",
   },
 }

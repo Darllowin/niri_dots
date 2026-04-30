@@ -7,6 +7,7 @@ input {
     }
     touchpad {
         tap
+        dwt
         natural-scroll
     }
     focus-follows-mouse max-scroll-amount="0%"
@@ -28,9 +29,7 @@ layout {
         proportion 0.66667
     }
     default-column-width { proportion 0.5; }
-    focus-ring {
-        off
-    }
+    focus-ring { off; }
     border {
         width 1
         active-color "#ffc87f"
@@ -46,34 +45,21 @@ layout {
     }
 }
 
-animations {
-    slowdown 0.8
+animations { slowdown 0.8; }
 
-}
-
-hotkey-overlay {
-    skip-at-startup
-}
+hotkey-overlay { skip-at-startup; }
 
 prefer-no-csd
 
 cursor {
-    xcursor-theme "Simp1e-Gruvbox-Light"
-    xcursor-size 24
+    xcursor-theme "Simp1e-Gruvbox-Dark"
+    xcursor-size 28
 }
 
-spawn-at-startup "pass-secret-service"
-spawn-at-startup "gentoo-pipewire-launcher"
-spawn-at-startup "waybar"
-spawn-at-startup "~/.config/niri/scripts/idle.sh"
+spawn-at-startup "swayidle"
 spawn-at-startup "~/.config/niri/scripts/battery.sh"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "awww" "img" "~/Pictures/Wallpapers/Tranquility.png"
-spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "text-scaling-factor" "1.35"
-spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "icon-theme" "Gruvbox-Plus-Light"
-spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "cursor-theme" "Simp1e-Gruvbox-Light"
-spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "gtk-theme" "Gruvbox-BL-LB-Light"
-spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "cursor-size" "24"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 
@@ -83,9 +69,6 @@ environment {
     XDG_CURRENT_DESKTOP "niri"
     CURRENT_COMPOSITOR "niri"
     XDG_SESSION_TYPE "wayland"
-    QT_QPA_PLATFORM "wayland;xcb"
-    SDL_VIDEODRIVER "wayland"
-    CLUTTER_BACKEND "wayland"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
     QT_FONT_DPI "120"
@@ -96,44 +79,44 @@ environment {
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 window-rule {
-    match app-id="pwvucontrol"
     match app-id="imv"
     match app-id="mpv"
-    
+
     default-column-width { fixed 1000; }
     default-window-height { fixed 600; }
     open-floating true
 }
 
 window-rule {
-  match title="^(file_progress)$"
-  match title="^(confirm)$"
-  match title="^(dialog)$"
-  match title="^(download)$"
-  match title="^(notification )$"
-  match title="^(error)$"
-  match title="^(splash)$"
-  match title="^(nwg-look)$"
-  match title="^(confirmreset)$"
-  match title="^(Delete profile)$"
-  match title="^File Operation Progress$"
-  match title="^Confirm to replace files$"
-  match title="^(Open File)(.*)$"
-  match title="^(Select a File)(.*)$"
-  match title="^(Choose wallpaper)(.*)$"
-  match title="^(Open Folder)(.*)$"
-  match title="^(Save As)(.*)$"
-  match title="^(Library)(.*)$"
-  match title="^(File Upload)(.*)$"
-  match title="^(Friends)(.*)$"
-  match title="^(Steam Settings)(.*)$"
+    match title="^(file_progress)$"
+    match title="^(confirm)$"
+    match title="^(dialog)$"
+    match title="^(download)$"
+    match title="^(notification )$"
+    match title="^(error)$"
+    match title="^(splash)$"
+    match title="^(nwg-look)$"
+    match title="^(confirmreset)$"
+    match title="^(Delete profile)$"
+    match title="^File Operation Progress$"
+    match title="^Confirm to replace files$"
+    match title="^(Open File)(.*)$"
+    match title="^(Select a File)(.*)$"
+    match title="^(Choose wallpaper)(.*)$"
+    match title="^(Open Folder)(.*)$"
+    match title="^(Save As)(.*)$"
+    match title="^(Library)(.*)$"
+    match title="^(File Upload)(.*)$"
+    match title="^(Friends)(.*)$"
+    match title="^(Steam Settings)(.*)$"
 
-  open-floating true
+    open-floating true
 }
 
 window-rule {
-    match app-id="google-chrome"
+    match app-id="org.chromium.Chromium"
     open-maximized true
+
 }
 
 binds {
@@ -141,9 +124,8 @@ binds {
 
     Mod+Q hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+B hotkey-overlay-title="Open a Browser: google-chrome" { spawn "flatpak" "run" "com.google.Chrome"; }
+    Mod+B hotkey-overlay-title="Open a Browser: google-chrome" { spawn "flatpak" "run" "org.chromium.Chromium"; }
     Mod+Shift+W hotkey-overlay-title="Restart waybar" { spawn "/home/darllowin/.config/waybar/waybar.sh"; }
-    Mod+Alt+B { spawn "~/.config/niri/scripts/bluetooth-menu.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -174,15 +156,12 @@ binds {
     Mod+Ctrl+K     { move-window-up; }
     Mod+Ctrl+L     { move-column-right; }
 
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
-   
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    
+
     Mod+Shift+WheelScrollDown      { focus-column-right; }
     Mod+Shift+WheelScrollUp        { focus-column-left; }
-    
+
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -192,6 +171,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
+
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }
     Mod+Shift+3 { move-column-to-workspace 3; }
@@ -202,9 +182,6 @@ binds {
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
@@ -215,7 +192,6 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     Print { screenshot; }
 }
