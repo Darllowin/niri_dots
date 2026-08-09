@@ -1,47 +1,68 @@
 {
-  "disable_ai": true,
-  "proxy": "",
-  "icon_theme": "Colored Zed Icons Theme Light",
-  "auto_update": false,
+  "instrumentation": {
+    "performance_profiler": {
+      "enabled": false
+    }
+  },
   "terminal": {
-    "toolbar": {
-      "breadcrumbs": false,
-    },
+    "shell": {
+      "program": "/bin/fish"
+    }
   },
-  "window_decorations": "client",
-  "use_system_window_tabs": false,
-  "tabs": {
-    "file_icons": true,
-    "git_status": false,
+  "cli_default_open_behavior": "new_window",
+  "use_system_prompts": false,
+  "use_system_path_prompts": false,
+  "session": {
+    "trust_all_worktrees": true
   },
-  "title_bar": {
-    "show_menus": false,
-  },
-  "vim": {
-    "use_smartcase_find": false,
-  },
-  "toolbar": {
-    "selections_menu": true,
-    "agent_review": false,
-    "code_actions": true,
-  },
-  "which_key": {
-    "enabled": false,
-  },
-  "ui_font_family": "IosevkaTerm Nerd Font Mono",
-  "buffer_font_family": "IosevkaTerm Nerd Font",
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
+    "anthropic_retention": false
   },
-  "session": {
-    "trust_all_worktrees": true,
-  },
-  "ui_font_size": 26,
-  "buffer_font_size": 27,
-  "theme": {
+  "icon_theme": {
     "mode": "system",
+    "light": "Colored Zed Icons Theme Light",
+    "dark": "Zed (Default)"
+  },
+  "ui_font_family": "Iosevka Nerd Font",
+  "buffer_font_family": "Iosevka Nerd Font",
+  "project_panel": {
+    "auto_fold_dirs": false,
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "terminal_init_command": "",
+    "single_file_review": false,
+    "commit_message_model": {
+      "provider": "opencode",
+      "model": "go/deepseek-v4-pro"
+    },
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "opencode",
+      "model": "go/deepseek-v4-pro",
+      "enable_thinking": true,
+      "effort": "max"
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "ui_font_size": 22,
+  "buffer_font_size": 23,
+  "theme": {
+    "mode": "light",
     "light": "Gruvbox Light",
-    "dark": "Gruvbox Dark",
+    "dark": "One Dark",
   },
 }

@@ -1,5 +1,4 @@
-timeout 150 'brightnessctl -s set 10' resume 'brightnessctl -r'
-timeout 330 'sh -c "test $(cat /sys/class/power_supply/ACAD/online) = 0 && niri msg action power-off-monitors"' resume 'niri msg action power-on-monitors'
-timeout 420 'swaylock -f'
+timeout 150 'sh -c "test $(cat /sys/class/power_supply/ACAD/online) = 0 && brightnessctl -s set 10%"' resume 'brightnessctl -r'
+timeout 360 'sh -c "test $(cat /sys/class/power_supply/ACAD/online) = 0 && swaylock -f && niri msg action power-off-monitors"' resume 'niri msg action power-on-monitors'
 timeout 900 'sh -c "test $(cat /sys/class/power_supply/ACAD/online) = 0 && systemctl sleep"'
 before-sleep 'swaylock -f'

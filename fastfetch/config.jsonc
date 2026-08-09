@@ -53,24 +53,14 @@
     },
     {
       "type": "wm",
-      "key": "├─",
-      "keyColor": "yellow",
-    },
-    {
-      "type": "theme",
-      "key": "├─󰉼",
-      "keyColor": "yellow",
-    },
-    {
-      "type": "icons",
-      "key": "╰─󰀻",
+      "key": "╰─",
       "keyColor": "yellow",
     },
 
     "break",
     {
       "type": "os",
-      "key": "╭─󰌽", // Just get your distro's logo off nerdfonts.com
+      "key": "╭─󰌽",
       "keyColor": "blue",
     },
     {
@@ -85,9 +75,11 @@
       "keyColor": "blue",
     },
     {
-      "type": "packages",
+      "type": "command",
       "key": "├─󰏖",
       "keyColor": "blue",
+      "text": "emerge_count=$(qlist -I 2>/dev/null | wc -l); cargo_count=$(cargo install --list 2>/dev/null | tail -n +2 | grep -c '^\\S'); go_count=$(ls ~/go/bin/ 2>/dev/null | wc -l); parts=\"$emerge_count (emerge)\"; [ \"$cargo_count\" -gt 0 ] && parts=\"$parts, $cargo_count (cargo)\"; [ \"$go_count\" -gt 0 ] && parts=\"$parts, $go_count (go)\"; echo \"$parts\"",
+      "format": "{1}",
     },
     {
       "type": "uptime",
@@ -99,8 +91,8 @@
       "type": "command",
       "key": "╰─󱦟",
       "keyColor": "blue",
-      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days old",
-      "format": "this system is {1}",
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
+      "format": "OS Age: {1}",
     },
 
     "break",

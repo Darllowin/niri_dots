@@ -19,6 +19,12 @@ output "eDP-1" {
     variable-refresh-rate
 }
 
+output "HDMI-A-1" {
+    mode "1920x1080@60.000"
+    scale 1
+    variable-refresh-rate
+}
+
 layout {
     gaps 0
     center-focused-column "never"
@@ -58,9 +64,6 @@ cursor {
 
 spawn-at-startup "swayidle"
 spawn-at-startup "~/.config/niri/scripts/battery.sh"
-spawn-at-startup "awww-daemon"
-spawn-at-startup "awww" "img" "~/Pictures/Wallpapers/Tranquility.png"
-spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 
 environment {
@@ -81,6 +84,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 window-rule {
     match app-id="imv"
     match app-id="mpv"
+    match app-id="lightningview"
 
     default-column-width { fixed 1000; }
     default-window-height { fixed 600; }
@@ -114,7 +118,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="org.chromium.Chromium"
+    match app-id="zen"
     open-maximized true
 
 }
@@ -122,9 +126,9 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Q hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+B hotkey-overlay-title="Open a Browser: google-chrome" { spawn "flatpak" "run" "org.chromium.Chromium"; }
+    Mod+B hotkey-overlay-title="Open a Browser: chromium" { spawn "zen"; }
     Mod+Shift+W hotkey-overlay-title="Restart waybar" { spawn "/home/darllowin/.config/waybar/waybar.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
