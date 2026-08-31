@@ -62,8 +62,7 @@ cursor {
     xcursor-size 28
 }
 
-spawn-at-startup "swayidle"
-spawn-at-startup "~/.config/niri/scripts/battery.sh"
+spawn-at-startup "noctalia"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 
 environment {
@@ -123,11 +122,19 @@ window-rule {
 
 }
 
+window-rule {
+    match title="launcher"
+    open-floating true
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 800; }
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    Mod+D hotkey-overlay-title="Run an Application: launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    //Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+B hotkey-overlay-title="Open a Browser: chromium" { spawn "zen"; }
     Mod+Shift+W hotkey-overlay-title="Restart waybar" { spawn "/home/darllowin/.config/waybar/waybar.sh"; }
 

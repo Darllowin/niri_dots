@@ -26,6 +26,7 @@ end
 function sync-update
     doas emerge --sync && doas emerge --ask \
         --verbose \
+        --deep \
         --update \
         --newuse \
         @world
@@ -34,6 +35,7 @@ end
 function update
     doas emerge --ask \
         --verbose \
+        --deep \
         --update \
         --newuse \
         @world

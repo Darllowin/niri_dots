@@ -1,0 +1,531 @@
+[accessibility]
+ui_scale = 1.2500000111758709
+
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    border = "surface_variant"
+    capsule_thickness = 0.44999999366700649
+    center = [ "clock", "date" ]
+    end = [
+        "tray",
+        "notifications",
+        "text_1",
+        "clipboard",
+        "text_2",
+        "text_3",
+        "network",
+        "text_4",
+        "text_5",
+        "bluetooth",
+        "text_6",
+        "text_7",
+        "cpu",
+        "text_9",
+        "text_8",
+        "ram",
+        "text_10",
+        "text_11",
+        "volume",
+        "text_12",
+        "text_13",
+        "brightness",
+        "text_14",
+        "text_15",
+        "battery",
+        "text_16",
+        "text_17",
+        "keyboard_layout",
+        "text_18",
+        "text_19",
+        "session",
+        "text_20",
+        "widget"
+    ]
+    font_family = "Iosevka NF"
+    font_weight = 900
+    hover_highlight = false
+    margin_ends = 0
+    padding = 5
+    radius = 0
+    scale = 1.2500000111758709
+    shadow = false
+    start = [ "workspaces_2", "spacer_2", "active_window" ]
+    thickness = 48
+    widget_spacing = 2
+
+[battery]
+warning_threshold = 20
+
+    [battery.device."/org/freedesktop/UPower/devices/headset_dev_2C_BE_EE_68_DE_4F"]
+    warning_threshold = 10
+
+[control_center]
+hidden_tabs = [ "media", "monitor", "weather" ]
+show_session_button = false
+sidebar = "full"
+sidebar_section = "full"
+
+    [control_center.calendar]
+    show_events_card = false
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+background_opacity = 0.99999997764825821
+cross_axis_padding = 0
+icon_size = 61
+main_axis_padding = 0
+radius = 0
+reserve_space = false
+show_dots = true
+smart_auto_hide = true
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "suspend"
+    enabled = false
+    lock_before_suspend = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1418.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+background_opacity = 0.99999997764825821
+layer = "overlay"
+scale = 1.2500000111758709
+
+[osd]
+background_opacity = 0.99999997764825821
+position = "top_right"
+position_vertical = "top_right"
+scale = 1.2500000111758709
+
+    [osd.kinds]
+    keyboard_layout = false
+    media = false
+
+[plugin_settings."weinguyen/opencode-companion"]
+show_reasoning = true
+
+[plugins]
+auto_update = false
+enabled = [ "darllowin/niri-workspaces-enhanced" ]
+
+[shell]
+corner_radius_scale = 0.0
+font_family = "Iosevka NF"
+launch_apps_as_systemd_services = true
+niri_overview_type_to_launch_enabled = true
+panel_anchor_bar = "default"
+password_style = "random"
+polkit_agent = true
+popup_shadows = false
+screen_time_enabled = true
+
+    [shell.launcher]
+    categories = false
+
+    [shell.panel]
+    borders = false
+    shadow = false
+
+    [shell.screenshot]
+    directory = "/home/darllowin/Pictures/Screenshots"
+
+    [shell.session]
+    show_shortcuts = false
+
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "2"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        countdown_seconds = 0.0
+        enabled = false
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "5"
+        variant = "destructive"
+
+    [shell.shadow]
+    alpha = 0.99999997764825821
+
+[theme]
+builtin = "Gruvbox"
+community_palette = "GruvboxAlt"
+mode = "light"
+source = "community"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+edge_smoothness = 0.29999999329447746
+
+    [wallpaper.default]
+    path = "/home/darllowin/Pictures/Wallpapers/Tranquility.png"
+
+    [wallpaper.last]
+    path = "/home/darllowin/Pictures/Wallpapers/Tranquility.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/darllowin/Pictures/Wallpapers/Tranquility.png"
+
+[weather]
+enabled = false
+
+[widget.active_window]
+display = "text_only"
+font_family = "Iosevka NF"
+interactive = false
+scale = 1.25
+
+[widget.battery]
+color = "#B8BB26"
+display_mode = "graphic"
+font_family = "Iosevka NF"
+scale = 1.25
+show_label = false
+
+[widget.bluetooth]
+color = "#8EC09C"
+font_family = "Iosevka NF"
+scale = 1.25
+
+[widget.brightness]
+color = "#FABD2F"
+scale = 1.25
+
+[widget.clipboard]
+color = "#53BAD6"
+font_family = "Iosevka NF"
+scale = 1.25
+
+[widget.clock]
+color = "#D3869B"
+font_family = "Iosevka NF"
+format = "|{:%H:%M}"
+scale = 1.25
+
+[widget.cpu]
+color = "#F84833"
+font_family = "Iosevka NF"
+scale = 1.25
+visualization = "none"
+
+    [widget.cpu.actions]
+    right = "exec kitty -e btop"
+
+[widget.date]
+color = "#D3869B"
+font_family = "Iosevka NF"
+format = " {:%a %d%b}|"
+scale = 1.25
+
+[widget.keyboard_layout]
+color = "#8EC07C"
+scale = 1.25
+
+[widget.network]
+color = "#F86430"
+font_family = "Iosevka NF"
+icon_color = "#F86430"
+scale = 1.25
+show_label = false
+
+[widget.notifications]
+font_family = "Iosevka NF"
+hide_when_no_unread = true
+scale = 1.25
+
+[widget.ram]
+capsule_border = "primary"
+capsule_padding = 0
+capsule_radius = "auto"
+color = "#B7BA26"
+scale = 1.25
+visualization = "none"
+
+    [widget.ram.actions]
+    right = "exec kitty -e btop"
+
+[widget.session]
+color = "error"
+font_family = "Iosevka NF"
+scale = 1.25
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.text_1]
+color = "#53BAD6"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_10]
+color = "#B7BA26"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_11]
+color = "#FE8019"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_12]
+color = "#FE8019"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_13]
+color = "#FABD2F"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_14]
+color = "#FABD2F"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_15]
+color = "#B8BB26"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_16]
+color = "#B8BB26"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_17]
+color = "#8EC07C"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_18]
+color = "#8EC07C"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_19]
+color = "error"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_2]
+color = "#53BAD6"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_20]
+color = "error"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_3]
+color = "#F86430"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_4]
+color = "#F86430"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_5]
+color = "#8EC09C"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_6]
+color = "#8EC09C"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_7]
+color = "#F84833"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_8]
+color = "#B7BA26"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.text_9]
+color = "#F84833"
+interactive = false
+scale = 1.25
+text = "|"
+type = "text"
+
+[widget.tray]
+font_family = "Iosevka NF"
+scale = 1.25
+
+[widget.volume]
+color = "#FE8019"
+font_family = "Iosevka NF"
+scale = 1.25
+
+[widget.widget]
+type = "weinguyen/opencode-companion:widget"
+
+[widget.workspaces]
+active_pill_size = 2.0
+focused_output_only = true
+font_family = "Iosevka NF"
+scale = 1.25
+style = "minimal"
+
+[widget.workspaces_2]
+empty_color = "on_surface"
+focused_color = "#FE8019"
+padding_h = 0
+scale = 1.25
+type = "darllowin/niri-workspaces-enhanced:workspaces"
+
+    [widget.workspaces_2.window_icons]
+    Bitwarden = "󰢬"
+    Throne = "󰖂"
+    brave-browser = ""
+    chromium-browser = ""
+    "de.haeckerfelix.Fragments" = ""
+    "dev.zed.Zed" = "󰨞"
+    foot = ""
+    "io.github.kukuruzka165.materialgram" = ""
+    kitty = ""
+    mpv = ""
+    obsidian = "󱞁"
+    "org.gnome.Nautilus" = "󰝰"
+    steam = ""
+    vesktop = ""
+    zen = "󰰷"

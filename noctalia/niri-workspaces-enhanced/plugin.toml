@@ -1,0 +1,99 @@
+id = "darllowin/niri-workspaces-enhanced"
+name = "Niri Workspaces Enhanced"
+version = "1.3.0"
+plugin_api = 9
+author = "darllowin"
+license = "MIT"
+dependencies = ["niri"]
+tags = ["niri", "workspaces", "bar"]
+icon = "apps"
+description = "Niri workspace switcher that shows app icons on each workspace (port of waybar-niri-workspaces-enhanced)."
+
+[[widget]]
+id = "workspaces"
+entry = "widget.luau"
+
+  [[widget.setting]]
+  key = "window_icons"
+  type = "string_map"
+  label_key = "settings.window_icons.label"
+  description_key = "settings.window_icons.description"
+  default = {}
+
+  [[widget.setting]]
+  key = "icon_default"
+  type = "string"
+  label_key = "settings.icon_default.label"
+  description_key = "settings.icon_default.description"
+  default = "*"
+
+  [[widget.setting]]
+  key = "format"
+  type = "string"
+  label_key = "settings.format.label"
+  description_key = "settings.format.description"
+  default = "| {index-and-name}{separator}{window-icons} |"
+
+  [[widget.setting]]
+  key = "separator"
+  type = "string"
+  label_key = "settings.separator.label"
+  default = ": "
+
+  [[widget.setting]]
+  key = "gap"
+  type = "int"
+  label_key = "settings.gap.label"
+  description_key = "settings.gap.description"
+  default = 0
+  min = 0
+  max = 32
+
+  [[widget.setting]]
+  key = "padding_h"
+  type = "int"
+  label_key = "settings.padding_h.label"
+  description_key = "settings.padding_h.description"
+  default = 4
+  min = 0
+  max = 32
+
+  [[widget.setting]]
+  key = "focused_color"
+  type = "color"
+  label_key = "settings.focused_color.label"
+  description_key = "settings.focused_color.description"
+  default = "secondary"
+
+  [[widget.setting]]
+  key = "active_color"
+  type = "color"
+  label_key = "settings.active_color.label"
+  description_key = "settings.active_color.description"
+  default = "secondary"
+
+  [[widget.setting]]
+  key = "occupied_color"
+  type = "color"
+  label_key = "settings.occupied_color.label"
+  default = "on_surface"
+
+  [[widget.setting]]
+  key = "empty_color"
+  type = "color"
+  label_key = "settings.empty_color.label"
+  default = "on_surface_variant"
+
+  [[widget.setting]]
+  key = "urgent_color"
+  type = "color"
+  label_key = "settings.urgent_color.label"
+  default = "error"
+
+  [[widget.setting]]
+  key = "refresh_ms"
+  type = "int"
+  label_key = "settings.refresh_ms.label"
+  default = 5000
+  min = 250
+  max = 60000

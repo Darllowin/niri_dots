@@ -1,0 +1,47 @@
+{
+  "settings": {
+    "window_icons": {
+      "label": "Window icons",
+      "description": "App id -> glyph map shown on workspaces. Saved as a whole: apps missing here get the default icon"
+    },
+    "icon_default": {
+      "label": "Default icon",
+      "description": "Glyph used for applications without a configured icon"
+    },
+    "format": {
+      "label": "Workspace label format",
+      "description": "Placeholders: {index}, {name}, {index-and-name}, {value}, {separator}, {window-icons}"
+    },
+    "separator": {
+      "label": "Separator"
+    },
+    "gap": {
+      "label": "Spacing between workspaces",
+      "description": "Gap between workspace pills, in pixels"
+    },
+    "padding_h": {
+      "label": "Horizontal padding",
+      "description": "Horizontal padding inside each workspace pill, in pixels"
+    },
+    "focused_color": {
+      "label": "Focused workspace color",
+      "description": "Workspace with keyboard focus"
+    },
+    "active_color": {
+      "label": "Active workspace color",
+      "description": "Workspace active on its monitor (relevant with multiple monitors)"
+    },
+    "occupied_color": {
+      "label": "Occupied workspace color"
+    },
+    "empty_color": {
+      "label": "Empty workspace color"
+    },
+    "urgent_color": {
+      "label": "Urgent workspace color"
+    },
+    "refresh_ms": {
+      "label": "Refresh interval (ms)"
+    }
+  }
+}
